@@ -4,12 +4,25 @@ async function getPokemon(id) {
   return data;
 }
 
-function init() {
-  const firstPokemon = await getPokemon(150)
-  // console.log(getPokemon(25)   )
+async function init() {
+  const firstPokemon = await getPokemon(1)
+  updatePokemon(firstPokemon);
 }
 
 init();
+
+function updatePokemon(pokemon) {
+  window.pokemon.textContent = pokemon.name;
+  window.image.setAttribute(
+    "src",
+    pokemon.sprites.other.dream_world.front_default
+  );
+}
+
+window.search.addEventListener("change", async  () => {
+  const pokemon = await getPokemon(window.search.value);
+  updatePokemon(pokemon);
+});
 
 // SOCIAL PANEL JS
 const floating_btn = document.querySelector(".floating-btn");
