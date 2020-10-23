@@ -10,6 +10,9 @@
 /* Custom properties */
 :root {
   --red: #f22625;
+  --social-panel: #464555;
+  --font: 'Open Sans', sans-serif;
+  --yellow: #f7f530;
 }
 
 /* Global styles */
@@ -22,6 +25,7 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
 }
 a {
   text-decoration: none;
@@ -39,7 +43,8 @@ main {
   padding: 1rem;
   margin: 0 auto;
   border-radius: 1rem;
-  text-align: center;color: white;
+  text-align: center;
+  color: white;
 }
 
 #pokemon::first-letter {
@@ -77,15 +82,15 @@ input {
   background-color: #fff;
   border-radius: 16px;
   box-shadow: 0 16px 31px -17px rgba(0, 31, 97, 0.6);
-  border: 5px solid #001f61;
+  border: 5px solid var(--social-panel);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Muli";
+  font-family: var(--font);
   position: relative;
-  height: 169px;
-  width: 370px;
+  height: 300px;
+  width: 170px;
   max-width: calc(100% - 10px);
 }
 
@@ -97,6 +102,8 @@ input {
   position: absolute;
   top: 5px;
   right: 5px;
+  background-color: #fff;
+
 }
 
 .social-panel button.close-btn:focus {
@@ -104,7 +111,7 @@ input {
 }
 
 .social-panel p {
-  background-color: #001f61;
+  background-color: var(--social-panel);
   border-radius: 0 0 10px 10px;
   color: #fff;
   font-size: 14px;
@@ -116,7 +123,6 @@ input {
   margin: 0;
   transform: translateX(-50%);
   text-align: center;
-  width: 235px;
 }
 
 .social-panel p i {
@@ -124,34 +130,32 @@ input {
 }
 
 .social-panel p a {
-  color: #ff7500;
+  color: var(--yellow);
   text-decoration: none;
 }
 
-.social-panel h4 {
-  margin: 20px 0;
-  color: #97a5ce;
-  font-family: "Muli";
-  font-size: 14px;
-  line-height: 18px;
-  text-transform: uppercase;
-}
 
 .social-panel ul {
   display: flex;
+  flex-direction: column;
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
 .social-panel ul li {
-  margin: 0 10px;
+  /* margin: 10px; */
+  padding: .5rem;
+}
+
+.social-panel ul li:first-child {
+  margin-top: 7rem;
 }
 
 .social-panel ul li a {
   border: 1px solid #dce1f2;
   border-radius: 50%;
-  color: #001f61;
+  color: var(--social-panel);
   font-size: 20px;
   display: flex;
   justify-content: center;
@@ -161,15 +165,25 @@ input {
   text-decoration: none;
 }
 
-.social-panel ul li a:hover {
-  border-color: #ff6a00;
-  box-shadow: 0 9px 12px -9px #ff6a00;
+.twitter:hover {
+  border-color: #00acee;
+  box-shadow: 0 9px 12px -9px #00acee;
+}
+
+.linkedin:hover {
+  border-color: #0e76a8;
+  box-shadow: 0 10px 10px -9px #0e76a8;
+}
+
+.github:hover {
+  border-color: #171515;
+  box-shadow: 0 9px 12px -9px #171515;
 }
 
 .floating-btn {
   border-radius: 26.5px;
-  background-color: #001f61;
-  border: 1px solid #001f61;
+  background-color: var(--social-panel);
+  border: 1px solid var(--social-panel);
   box-shadow: 0 16px 22px -17px #03153b;
   color: #fff;
   cursor: pointer;
@@ -184,7 +198,7 @@ input {
 
 .floating-btn:hover {
   background-color: #ffffff;
-  color: #001f61;
+  color: var(--social-panel);
 }
 
 .floating-btn:focus {
@@ -192,10 +206,10 @@ input {
 }
 
 .floating-text {
-  background-color: #001f61;
+  background-color: var(--social-panel);
   border-radius: 10px 10px 0 0;
   color: #fff;
-  font-family: "Muli";
+  font-family: var(--font);
   padding: 7px 15px;
   position: fixed;
   bottom: 0;
@@ -204,7 +218,7 @@ input {
 }
 
 .floating-text a {
-  color: #ff7500;
+  color: var(--yellow);
   text-decoration: none;
 }
 
